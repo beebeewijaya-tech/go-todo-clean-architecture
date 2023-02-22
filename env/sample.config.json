@@ -1,0 +1,17 @@
+{
+    "SERVER": {
+        "ADDRESS": "",
+        "PORT": 0
+    },
+    "DB": {
+        "HOST": "",
+        "PORT": 0,
+        "DATABASE": "",
+        "USERNAME": "",
+        "PASSWORD": "",
+        "DIALECT": ""
+    },
+    "JWT": {
+        "SECRETKEY": ""
+    }
+}

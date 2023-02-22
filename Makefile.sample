@@ -1,0 +1,13 @@
+mock-domain:
+	mockgen -source .\domain\todo.go -destination=.\domain\mock_domain\todo.go
+
+migrate-up:
+	migrate -path migrations/ -database "postgres://user:password@host:port/dbname?sslmode=disable" -verbose up
+
+migrate-down:
+	migrate -path migrations/ -database "postgres://user:password@host:port/dbname?sslmode=disable" -verbose down
+
+test:
+	go test -v .\...
+
+.PHONY: mock-domain migrate-up migrate-down test
