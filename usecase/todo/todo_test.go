@@ -59,11 +59,11 @@ func TestFetchTodos(t *testing.T) {
 				mock.EXPECT().
 					Fetch(gomock.Any(), gomock.Any(), gomock.Any(), gomock.Any()).
 					Times(1).
-					Return(nil, sql.ErrNoRows)
+					Return(nil, sql.ErrConnDone)
 			},
 			checkResponse: func(t *testing.T, response []domain.Todo, err error) {
 				require.Error(t, err)
-				require.EqualError(t, err, sql.ErrNoRows.Error())
+				require.EqualError(t, err, sql.ErrConnDone.Error())
 				require.Empty(t, response)
 			},
 		},

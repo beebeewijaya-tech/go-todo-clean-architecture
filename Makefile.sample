@@ -8,6 +8,6 @@ migrate-down:
 	migrate -path migrations/ -database "postgres://user:password@host:port/dbname?sslmode=disable" -verbose down
 
 test:
-	go test -v .\...
+	go test -v -cover .\...
 
 .PHONY: mock-domain migrate-up migrate-down test
